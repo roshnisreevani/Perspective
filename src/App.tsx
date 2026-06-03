@@ -1,26 +1,58 @@
 import "./App.css";
+
 function App() {
   return (
     <main className="app">
-    <section className="hero">
-      <p className="eyebrow">Decision Intelligence Platform</p>
+      <section className="landingPage">
+        <nav className="navBar">
+          <div></div>
 
-        <h1>Perspective</h1>
+          <div className="navLinks">
+            <a href="#">How it works</a>
+            <a href="#">About</a>
+          </div>
+        </nav>
 
-        <h2>The answer isn't the point.</h2>
+        <div className="heroContent">
+          <div className="textSide">
+            <div className="projectName">Perspective</div>
 
-        <p className="tagline">
-          Understanding why the answer changes is.
-        </p>
+            <h1>
+              <span>The answer isn&apos;t the point.</span>
+              <span>
+                The <em>why</em> is.
+              </span>
+            </h1>
 
-          <div className="questionBox">
-          <input placeholder="Should I switch majors?" />
+            <p>
+              <span>
+                Because sometimes the hardest part isn&apos;t finding an answer;
+              </span>
 
-          <button>Analyze Perspective</button>
+              <span>
+                it&apos;s understanding why it changed.
+              </span>
+            </p>
+
+            <button>Explore Perspective →</button>
+          </div>
+
+          <div className="lightSide">
+            <div className="whiteBeam"></div>
+
+            <div className="splitDot"></div>
+
+            <div className="ray redRay"></div>
+            <div className="ray orangeRay"></div>
+            <div className="ray yellowRay"></div>
+            <div className="ray greenRay"></div>
+            <div className="ray blueRay"></div>
+            <div className="ray purpleRay"></div>
+          </div>
         </div>
-    </section>
+      </section>
     </main>
   );
 }
 
- export default App;
+export default App;
