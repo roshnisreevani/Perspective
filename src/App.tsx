@@ -6,16 +6,11 @@ function App() {
       <section className="landingPage">
         <nav className="navBar">
           <div></div>
-
-          <div className="navLinks">
-            <a href="#">How it works</a>
-            <a href="#">About</a>
-          </div>
         </nav>
 
         <div className="heroContent">
           <div className="textSide">
-            <div className="projectName">Perspective</div>
+            <div className="projectName">PERSPECTIVE</div>
 
             <h1>
               <span>The answer isn&apos;t the point.</span>
@@ -25,21 +20,27 @@ function App() {
             </h1>
 
             <p>
-              <span>
-                Because sometimes the hardest part isn&apos;t finding an answer;
-              </span>
-
-              <span>
-                it&apos;s understanding why it changed.
-              </span>
+              <span>Perspective reveals how assumptions, evidence,</span>
+              <span>values, and bias shape recommendations.</span>
             </p>
-
-            <button>Explore Perspective →</button>
           </div>
 
           <div className="lightSide">
-            <div className="whiteBeam"></div>
+            <div className="exploreNav">
+              <a href="#what-is-perspective">
+                THE IDEA
+              </a>
 
+              <a href="#example">
+                EXAMPLE
+              </a>
+
+              <a href="#demo">
+                TRY IT OUT
+              </a>
+            </div>
+
+            <div className="whiteBeam"></div>
             <div className="splitDot"></div>
 
             <div className="ray redRay"></div>
@@ -51,6 +52,12 @@ function App() {
           </div>
         </div>
       </section>
+
+      <section id="what-is-perspective"></section>
+
+      <section id="example"></section>
+
+      <section id="demo"></section>
     </main>
   );
 }

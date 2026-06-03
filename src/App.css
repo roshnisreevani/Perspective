@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Sans:wght@400;500;600&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -14,32 +13,32 @@ body,
 }
 
 body {
-  font-family: "DM Sans", sans-serif;
-  background: #e4dfc4f9;
-  color: #111;
+  font-family: "IBM Plex Sans", sans-serif;
 }
 
-.app {
-  min-height: 100vh;
+.nav a,
+.project-label,
+.subtitle,
+.cta {
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+.headline {
+  font-family: "Instrument Serif", serif;
 }
 
 .landingPage {
   min-height: 100vh;
   position: relative;
   overflow: hidden;
+
   background:
-    radial-gradient(circle at 70% 35%, rgba(255, 255, 255, 0.9), transparent 28%),
-    radial-gradient(circle at 15% 80%, rgba(230, 224, 214, 0.55), transparent 34%),
-    #f8f6f1;
+    radial-gradient(circle at 70% 35%, rgba(255,255,255,0.45), transparent 28%),
+    radial-gradient(circle at 15% 80%, rgba(255,255,255,0.2), transparent 34%),
+    #e3e7ed;
 }
 
-.navBar {
-  height: 120px;
-  padding: 28px 58px 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+
 
 
 
@@ -49,10 +48,11 @@ body {
 }
 
 .navLinks a {
-  font-family: "Inter", sans-serif;
-  font-size: 4.5rem;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 6rem;
   font-weight: 500;
-  color: #000000;
+  color: #000;
+  text-decoration: none;
 }
 
 .heroContent {
@@ -63,27 +63,32 @@ body {
   position: absolute;
   z-index: 5;
   left: 240px;
-  top: 50%;
+  top: 47%;
   transform: translateY(-45%);
   width: 1200px;
 }
 .projectName {
-  font-family: "Inter", sans-serif;
-  font-size: 16rem;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: #777;
-  margin-bottom: 60px;
+font-family: "Instrument Serif", serif;  font-size: 15rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: none;
+
+  color: #2054e4;
+
+  margin-bottom: 24px;
 }
 
 .textSide h1 {
   font-family: "Instrument Serif", serif;
-  font-size: 16rem;
-  line-height: 0.92;
-  letter-spacing: -0.055em;
+
+  font-size: 13rem;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
   font-weight: 400;
-  margin-bottom: 60px;
+
+  color: #13203f;
+
+  margin-bottom: 40px;
 }
 .textSide h1 span {
   display: block;
@@ -91,6 +96,7 @@ body {
 
 .textSide h1 em {
   font-style: italic;
+  color: #2054e4;
 }
 
 .textSide h1 span {
@@ -99,13 +105,16 @@ body {
 }
 
 .textSide p {
-  font-family: "Inter", sans-serif;
-  font-size: 4rem;
-  font-weight: 500;
-  line-height: 1.6;
-  margin-bottom: 60px;
-  color: #555;
+font-family: "Instrument Serif", serif;
+  font-size: 6rem;
+  font-weight: 400;
+  line-height: 1.7;
+
+  color: #4d5a73;
+
+  margin-bottom: 40px;
 }
+
 .textSide p span {
   display: block;
 }
@@ -120,17 +129,19 @@ body {
   border: none;
   padding: 0;
 
-  font-family: "Instrument Serif", serif;
-  font-size: 4.5rem;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 6rem;
+  font-weight: 500;
 
-  color: #111;
-
-  text-decoration: underline;
-  text-underline-offset: 6px;
+  color: #182033;
 
   cursor: pointer;
 
   transition: all 0.25s ease;
+}
+
+.textSide button:hover {
+  transform: translateX(6px);
 }
 
 .textSide button:hover {
@@ -323,6 +334,40 @@ box-shadow:
     opacity: 0.95;
   }
 }
+.exploreNav {
+  position: absolute;
+  right: 56%;
+  top: 80%;
+  transform: translateX(-50%);
+
+  display: flex;
+  align-items: center;
+  gap: 340px;
+
+  z-index: 20;
+  pointer-events: auto;
+}
+
+
+
+.exploreNav a {
+  text-decoration: none;
+  font-family: "Instrument Serif", serif;
+  font-size: 5rem;
+  font-weight: 500;
+
+  color: #182033;
+
+  padding: 10px 18px;
+  border-radius: 8px;
+  transition: all 0.25s ease;
+}
+
+.exploreNav a:hover {
+  background: rgba(127, 184, 255, 0.18);
+  color: #6f92cf;
+}
+
 
 @media (max-width: 900px) {
   .navBar {
@@ -360,4 +405,5 @@ box-shadow:
   .lightSide {
     opacity: 0.45;
   }
+  
 }
