@@ -336,7 +336,7 @@ box-shadow:
 }
 .exploreNav {
   position: absolute;
-  right: 56%;
+  right: 53%;
   top: 80%;
   transform: translateX(-50%);
 
@@ -405,5 +405,233 @@ box-shadow:
   .lightSide {
     opacity: 0.45;
   }
-  
 }
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+.exploreNav button {
+  text-decoration: none;
+  font-family: "Instrument Serif", serif;
+  font-size: 5rem;
+  font-weight: 500;
+  color: #182033;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.exploreNav button:hover {
+  background: rgba(127, 184, 255, 0.18);
+  color: #6f92cf;
+}
+
+.horizontalParallax {
+  height: 100vh;
+  background: #e3e7ed;
+  overflow: hidden;
+}
+
+.horizontalScroller {
+  height: 100vh;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  position: relative;
+}
+
+.horizontalScroller::-webkit-scrollbar {
+  height: 12px;
+}
+
+.horizontalScroller::-webkit-scrollbar-thumb {
+  background: rgba(32, 84, 228, 0.3);
+  border-radius: 999px;
+}
+
+.movingBeam {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 500vw;
+  height: 34px;
+
+  transform: translateY(-50%);
+
+  background: linear-gradient(
+    90deg,
+    white 0%,
+    white 28%,
+    #ef4444 45%,
+    #fb923c 55%,
+    #eab308 65%,
+    #22c55e 75%,
+    #3b82f6 85%,
+    #8b5cf6 100%
+  );
+
+  box-shadow:
+    0 0 35px white,
+    0 0 100px rgba(220, 240, 255, 0.95);
+
+  z-index: 1;
+  pointer-events: none;
+}
+
+.parallaxTrack {
+  display: flex;
+  width: 400vw;
+  height: 100vh;
+  position: relative;
+  z-index: 2;
+}
+
+.parallaxSlide {
+  width: 100vw;
+  height: 100vh;
+
+  flex-shrink: 0;
+
+  scroll-snap-align: start;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 0 8vw;
+}
+
+.parallaxSlide p {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 3rem;
+  color: #4d5a73;
+  margin-bottom: 24px;
+}
+
+.parallaxSlide h2 {
+  font-family: "Instrument Serif", serif;
+  font-size: 12rem;
+  line-height: 0.95;
+  font-weight: 400;
+  color: #13203f;
+  max-width: 1400px;
+}
+
+.parallaxSlide h3 {
+  margin-top: 56px;
+  font-family: "Instrument Serif", serif;
+  font-size: 7rem;
+  line-height: 1;
+  font-weight: 400;
+  color: #2054e4;
+}
+.fadeIn1,
+.fadeIn2,
+.fadeIn3,
+.fadeIn4,
+.fadeIn5 {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp 0.9s ease forwards;
+}
+
+.fadeIn1 {
+  animation-delay: 0.3s;
+}
+
+.fadeIn2 { animation-delay: 1.5s; }
+.fadeIn3 { animation-delay: 2.5s; }
+.fadeIn4 { animation-delay: 3.5s; }
+.fadeIn5 { animation-delay: 5s; }
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hookLabel {
+  font-size: 4rem;
+  color: #2054e4;
+  margin-bottom: 24px;
+}
+
+.hookQuestion {
+  font-size: 20rem;
+  max-width: 1400px;
+}
+
+.recommendationPaths {
+  display: flex;
+  gap: 40px;
+  margin-top: 70px;
+}
+
+.pathCard {
+  padding: 30px;
+  border-radius: 28px;
+
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(18px);
+
+  box-shadow:
+    0 15px 40px rgba(0,0,0,0.05);
+}
+
+.pathCard span {
+  display: block;
+
+  margin-bottom: 12px;
+
+  font-family: "IBM Plex Sans", sans-serif;
+
+  font-size: 3rem;
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.pathCard p {
+  font-size: 4rem;
+  margin: 0;
+}
+
+.stabilityPath span {
+  color: #3b82f6;
+}
+
+.growthPath span {
+  color: #22c55e;
+}
+
+.independencePath span {
+  color: #8b5cf6;
+}
+
+.hookReveal {
+  margin-top: 80px;
+}
+
+.hookReveal p {
+  font-size: 4rem;
+}
+
+.hookReveal h3 {
+  font-size: 8rem;
+  color: #2054e4;
+}
+
+

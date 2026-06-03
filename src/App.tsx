@@ -1,6 +1,23 @@
+import { useState } from "react";
 import "./App.css";
 
 function App() {
+  const [ideaStarted, setIdeaStarted] = useState(false);
+  const scrollToSection = (id: string) => {
+  if (id === "idea") {
+    setIdeaStarted(false);
+
+    setTimeout(() => {
+      setIdeaStarted(true);
+    }, 600);
+  }
+
+  document.getElementById(id)?.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+};
+
   return (
     <main className="app">
       <section className="landingPage">
@@ -27,17 +44,9 @@ function App() {
 
           <div className="lightSide">
             <div className="exploreNav">
-              <a href="#what-is-perspective">
-                THE IDEA
-              </a>
-
-              <a href="#example">
-                EXAMPLE
-              </a>
-
-              <a href="#demo">
-                TRY IT OUT
-              </a>
+              <button onClick={() => scrollToSection("idea")}>THE IDEA</button>
+              <button onClick={() => scrollToSection("example")}>MY MISSION</button>
+              <button onClick={() => scrollToSection("demo")}>TRY IT OUT</button>
             </div>
 
             <div className="whiteBeam"></div>
@@ -53,11 +62,123 @@ function App() {
         </div>
       </section>
 
-      <section id="what-is-perspective"></section>
+      <section id="idea" className="horizontalParallax">
+        <div className="horizontalScroller">
+          <div className="movingBeam"></div>
 
-      <section id="example"></section>
+          <div className="parallaxTrack">
+            <section className="parallaxSlide hookSlide">
+<p className={`hookLabel ${ideaStarted ? "fadeIn1" : ""}`}>
+  One question.
+</p>              
+<h2 className={`hookQuestion ${ideaStarted ? "fadeIn1" : ""}`}>
+  Should I start a business?
+</h2>
+              <div className="recommendationPaths">
+<div className={`pathCard stabilityPath ${ideaStarted ? "fadeIn2" : ""}`}>                  <span>Stability</span>
+                  <p>Keep your job.</p>
+                </div>
 
-      <section id="demo"></section>
+<div className={`pathCard growthPath ${ideaStarted ? "fadeIn3" : ""}`}>                  <span>Growth</span>
+                  <p>Start the company.</p>
+                </div>
+
+<div className={`pathCard independencePath ${ideaStarted ? "fadeIn4" : ""}`}>                  <span>Independence</span>
+                  <p>Build a side business first.</p>
+                </div>
+              </div>
+
+<div className={`hookReveal ${ideaStarted ? "fadeIn5" : ""}`}>                <p>All three recommendations are reasonable.</p>
+                <h3>So which one is right?</h3>
+              </div>
+            </section>
+
+            <section className="parallaxSlide">
+              <p>Question</p>
+              <h2>Should I start a business?</h2>
+              <div className="answerCard">Start the company.</div>
+            </section>
+
+            <section className="parallaxSlide">
+              <h2>That answer has hidden layers.</h2>
+
+              <div className="layersGrid">
+                <div>
+                  <b>Evidence</b>
+                  <span>Growing market demand.</span>
+                </div>
+
+                <div>
+                  <b>Assumption</b>
+                  <span>You can tolerate uncertainty.</span>
+                </div>
+
+                <div>
+                  <b>Value</b>
+                  <span>Growth over stability.</span>
+                </div>
+
+                <div>
+                  <b>Bias</b>
+                  <span>
+                    Most sources came from entrepreneurship publications.
+                  </span>
+                </div>
+              </div>
+            </section>
+
+            <section className="parallaxSlide">
+              <h2>
+                The same evidence.
+                <br />
+                Different priorities.
+              </h2>
+
+              <div className="outcomeGrid">
+                <div>
+                  <b>Stability</b>
+                  <span>Keep your job.</span>
+                </div>
+
+                <div>
+                  <b>Growth</b>
+                  <span>Start the company.</span>
+                </div>
+
+                <div>
+                  <b>Independence</b>
+                  <span>Build a side business first.</span>
+                </div>
+              </div>
+            </section>
+
+            <section className="parallaxSlide">
+              <h2>The recommendation changed.</h2>
+              <h2>The evidence didn&apos;t.</h2>
+              <h2>The priorities did.</h2>
+
+              <div className="closingLines">
+                <p>Recommendations are not discovered.</p>
+                <p>They are constructed.</p>
+              </div>
+
+              <h3 className="humanDecision">
+                AI Recommendation Complete.
+                <br />
+                Human Decision Required.
+              </h3>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <section id="example" className="placeholderSection">
+        <h2>My Mission</h2>
+      </section>
+
+      <section id="demo" className="placeholderSection">
+        <h2>Try It Out</h2>
+      </section>
     </main>
   );
 }
