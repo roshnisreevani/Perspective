@@ -486,7 +486,7 @@ html {
 
 .parallaxTrack {
   display: flex;
-  width: 400vw;
+  width: 500vw;
   height: 100vh;
   position: relative;
   z-index: 2;
@@ -635,3 +635,567 @@ html {
 }
 
 
+
+.sceneThree {
+  justify-content: center;
+  position: relative;
+}
+
+.sceneLabel {
+  font-size: 2rem;
+  color: #2054e4;
+  margin-bottom: 60px;
+}
+
+.layerStack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.layerStack h2 {
+  font-size: 10rem;
+  line-height: 0.9;
+}
+
+.layerDescription {
+  margin-top: 60px;
+  font-size: 2.5rem;
+}
+.sceneTwo {
+  justify-content: center;
+}
+
+.sceneTwoQuestion {
+  font-size: 5rem;
+  color: #13203f;
+  margin-bottom: 60px;
+}
+
+.sceneTwoQuestion em {
+  font-family: "Instrument Serif", serif;
+  font-size: 6rem;
+  font-style: italic;
+  color: #ef4444;
+}
+
+.sceneTwoMain {
+  font-size: 8rem;
+  line-height: 0.95;
+  max-width: 1600px;
+}
+
+.sceneTwoReason {
+  margin-top: 70px;
+  font-family: "Instrument Serif", serif;
+  font-size: 6rem;
+  line-height: 0.95;
+  font-weight: 400;
+  color: #13203f;
+}
+
+.parallaxSlide .sceneTwoHuman {
+  margin-top: 60px;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 4.5rem !important;
+  line-height: 1.35;
+  color: #000000;
+}
+
+.parallaxSlide .sceneTwoFinal {
+  margin-top: 40px;
+  font-family: "Instrument Serif", serif;
+  font-size: 8rem !important;
+  font-style: italic;
+  color: #ef4444;
+}
+
+.parallaxSlide .sceneTwoMain {
+  font-size: 12rem;
+  line-height: 0.9;
+  max-width: 1700px;
+}
+
+.parallaxSlide .sceneTwoReason {
+  font-size: 8rem;
+  color: #2054e4;
+}
+
+.parallaxSlide .sceneTwoFinal {
+  font-size: 5.5rem;
+}
+
+.sceneTwoQuestion em {
+  font-size: 5rem;
+}
+
+.sceneThree {
+  justify-content: center;
+}
+
+.sceneLabel {
+  font-size: 3rem;
+  color: #2054e4;
+  margin-bottom: 120px;
+}
+.sceneThree {
+  justify-content: center;
+}
+
+
+
+
+.sceneThree .sceneLabel {
+  font-size: 5rem;
+  color: #2054e4;
+  margin-bottom: 120px;
+}
+
+.beamFramework {
+  position: relative;
+  width: 100%;
+  height: 520px;
+  transform: translateY(-80px);
+}
+
+
+.frameworkItem {
+  position: absolute;
+  top: 62%;
+  z-index: 5;
+
+  transform: translateY(-50%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  opacity: 0;
+  
+}
+.frameworkFade1 {
+  animation: frameworkReveal 0.8s ease forwards;
+  animation-delay: 0.2s;
+}
+
+.frameworkFade2 {
+  animation: frameworkReveal 0.8s ease forwards;
+  animation-delay: 1s;
+}
+
+.frameworkFade3 {
+  animation: frameworkReveal 0.8s ease forwards;
+  animation-delay: 1.8s;
+}
+
+.frameworkFade4 {
+  animation: frameworkReveal 0.8s ease forwards;
+  animation-delay: 2.6s;
+}
+
+.frameworkFade5 {
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards;
+  animation-delay: 3.5s;
+}
+
+.frameworkItem span {
+  font-family: "Instrument Serif", serif;
+  font-size: 8rem;
+  line-height: 1;
+  color: #13203f;
+
+  background: rgba(227, 231, 237, 0.95);
+  padding: 8px 20px;
+  border-radius: 14px;
+
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.04);
+
+  order: 2;
+}
+
+.frameworkItem p {
+  position: absolute;
+  width: 360px;
+
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 4rem;
+  line-height: 1.25;
+  text-align: center;
+  color: #4d5a73;
+
+  margin: 0;
+}
+
+
+.frameworkItem::after {
+  content: "";
+  position: absolute;
+  left: 45%;
+  width: 6px;
+  height: 570px;
+
+  background: rgba(32, 84, 228, 0.55);
+  box-shadow: 0 0 18px rgba(32, 84, 228, 0.35);
+
+  transform: translateX(-50%) scaleY(0);
+  animation: lineGrow 0.8s ease forwards;
+}
+
+/* positions across beam */
+.evidenceItem {
+  left: 8%;
+  animation-delay: 0.4s;
+}
+
+.assumptionsItem {
+  left: 32%;
+  animation-delay: 1.2s;
+}
+
+.valuesItem {
+  left: 58%;
+  animation-delay: 2s;
+}
+
+.biasItem {
+  left: 80%;
+  animation-delay: 2.8s;
+}
+
+/* explanation ABOVE the beam */
+.evidenceItem p,
+.valuesItem p {
+  bottom: 600px;
+}
+
+.evidenceItem::after,
+.valuesItem::after {
+  bottom: 12px;
+  transform-origin: bottom;
+}
+
+/* explanation BELOW the beam */
+.assumptionsItem p,
+.biasItem p {
+  top: 600px;
+}
+
+.assumptionsItem::after,
+.biasItem::after {
+  top: 12px;
+  transform-origin: top;
+}
+
+/* matching delays for lines */
+.evidenceItem::after {
+  animation-delay: 0.4s;
+}
+
+.assumptionsItem::after {
+  animation-delay: 1.2s;
+}
+
+.valuesItem::after {
+  animation-delay: 2s;
+}
+
+.biasItem::after {
+  animation-delay: 2.8s;
+}
+
+.frameworkClosing {
+  position: absolute;
+  left: 4vw;
+  bottom: 590px;
+
+  font-size: 5.5rem;
+  line-height: 0.8;
+  color: #2054e4;
+}
+.frameworkClosing em {
+  font-style: italic;
+  color: #000000;
+  font-size: 6rem;
+
+}
+
+
+@keyframes frameworkReveal {
+  from {
+    opacity: 0;
+    transform: translateY(-50%) translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(-50%) translateY(0);
+  }
+}
+
+@keyframes lineGrow {
+  from {
+    transform: translateX(-50%) scaleY(0);
+  }
+
+  to {
+    transform: translateX(-50%) scaleY(1);
+  }
+}
+.sceneFour {
+  position: relative;
+  overflow: hidden;
+}
+
+.sceneFourContent {
+  position: relative;
+  top: 20rem; /* moves entire scene down */
+
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+
+  padding: 10vh 9vw 7vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  color: #f8f4ec;
+}
+
+.sceneFourHeader {
+  position: relative;
+  top: -8rem;
+  text-align: center;
+}
+
+.sceneFourKicker {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin: 0;
+  opacity: 0.8;
+}
+
+.sceneFourTitle {
+  font-family: "Instrument Serif", serif;
+  font-size: clamp(10rem, 15vw, 15rem);
+  font-style: italic;
+  font-weight: 400;
+  margin: 2rem 0 4.5rem;
+}
+
+.peopleRow {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 15rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.personCard {
+  position: relative;
+  width: 30%;
+  min-height: 340px;
+  padding: 2rem;
+  border: 1px solid rgba(0, 0, 0, 0.28);
+  background: rgba(52, 159, 205, 0.08);
+  backdrop-filter: blur(10px);
+}
+
+.personLine {
+  position: absolute;
+  top: -65px;
+  left: 50%;
+  width: 1px;
+  height: 65px;
+  background: rgba(6, 6, 6, 0.75);
+}
+
+.personLabel {
+  font-family: "Instrument Serif", serif;
+  font-size: 6rem;
+  margin-bottom: 1rem;
+}
+
+.personCard p {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 3.5rem;
+  line-height: 1.6;
+  margin: 0.25rem 0;
+  opacity: 0.88;
+}
+
+.personCard span {
+  display: block;
+  margin-top: 3.5rem;
+  font-family: "Instrument Serif", serif;
+  font-size: 5rem;
+  font-style: italic;
+  color: #000000;
+}
+
+.sceneFourEnding {
+  margin-top: 16rem;
+  text-align: center;
+}
+
+.sceneFourEnding p {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 4rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.75;
+  margin-bottom: 0.5rem;
+}
+
+.sceneFourEnding h3 {
+  font-family: "Instrument Serif", serif;
+  font-size: clamp(2.4rem, 5vw, 7rem);
+  font-weight: 400;
+  font-style: italic;
+  margin: 0;
+}
+
+.flipCard {
+  width: 36%;
+  min-height: 380px;
+  perspective: 1200px;
+}
+
+.flipCardInner {
+  position: relative;
+  width: 100%;
+  min-height: 320px;
+  transition: transform 0.8s ease;
+  transform-style: preserve-3d;
+}
+
+.flipCard:hover .flipCardInner {
+  transform: rotateY(180deg);
+}
+
+.flipCardFront,
+.flipCardBack {
+  position: absolute;
+  inset: 0;
+  padding: 2.4rem;
+  border: 1px solid rgba(248, 244, 236, 0.28);
+  background: rgba(248, 244, 236, 0.08);
+  backdrop-filter: blur(10px);
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.flipCardBack {
+  transform: rotateY(180deg);
+}
+
+.studentCard .flipCardFront,
+.studentCard .flipCardBack {
+  border-top: 4px solid #f2b632;
+}
+
+.engineerCard .flipCardFront,
+.engineerCard .flipCardBack {
+  border-top: 4px solid #61c554;
+}
+
+.parentCard .flipCardFront,
+.parentCard .flipCardBack {
+  border-top: 4px solid #43b8d6;
+}
+
+.flipCardFront p {
+  font-family: "Instrument Serif", serif;
+  font-size: 5rem;
+  line-height: 1.5;
+  margin: 0.4rem 0;
+}
+
+
+
+.flipCardBack p {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 2.5rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin: 0 0 1rem;
+}
+
+.flipCardBack h3 {
+  font-family: "Instrument Serif", serif;
+  font-size: 7.5rem;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1;
+  margin: 0;
+}
+
+.studentCard .flipCardBack h3 {
+  color: #f2b632;
+}
+
+.engineerCard .flipCardBack h3 {
+  color: #61c554;
+}
+
+.parentCard .flipCardBack h3 {
+  color: #43b8d6;
+}
+
+.personTitle {
+  position: relative;
+  top: -3rem;
+
+  font-family: "Instrument Serif", serif;
+  font-size: 2.3rem;
+  font-weight: 400;
+  margin: 0 0 1.25rem 0;
+  line-height: 1;
+}
+
+.studentCard .personTitle {
+  color: #f2b632;
+}
+
+.engineerCard .personTitle {
+  color: #61c554;
+}
+
+.parentCard .personTitle {
+  color: #43b8d6;
+}
+
+.backHomeButton {
+  margin-top: 25rem;
+
+  position: relative;
+  left: 120rem;
+
+  background: transparent;
+  border: none;
+
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 3.5rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+
+  color: rgba(28, 44, 78, 0.65);
+
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+.backHomeButton:hover {
+  color: #1c2c4e;
+  transform: translateY(-2px);
+}
