@@ -1175,27 +1175,188 @@ html {
 }
 
 .backHomeButton {
-  margin-top: 25rem;
-
-  position: relative;
-  left: 120rem;
-
   background: transparent;
-  border: none;
+  border: 1px solid #13203f;
+  color: #13203f;
+
+  padding: 1.5rem 3rem;
+  margin-top: 1rem;
 
   font-family: "IBM Plex Sans", sans-serif;
-  font-size: 3.5rem;
+  font-size: 2rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
 
-  color: rgba(28, 44, 78, 0.65);
-
   cursor: pointer;
-
   transition: all 0.25s ease;
 }
 
 .backHomeButton:hover {
   color: #1c2c4e;
   transform: translateY(-2px);
+}
+
+.missionSection {
+  min-height: 180vh;
+  background: #e3e7ed;
+  padding: 12rem 4vw;
+}
+
+.missionGrid {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  gap: 8rem;
+  width: 100%;
+  max-width: 2100px;
+  margin: 0 auto;
+}
+
+.missionSticky {
+  position: sticky;
+  top: 12rem;
+  height: fit-content;
+}
+
+.missionLabel {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 4.5rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #2054e4;
+  margin-bottom: 2rem;
+}
+
+.missionTitle {
+  font-family: "Instrument Serif", serif;
+  font-size: clamp(9rem, 9vw, 14rem);
+  line-height: 0.9;
+  font-weight: 400;
+  color: #13203f;
+  margin-bottom: 4rem;
+}
+
+.missionSideText {
+  font-family: "Instrument Serif", serif;
+  font-size: 4.5rem;
+  line-height: 1.5;
+  color: #20242d;
+  max-width: 760px;
+}
+
+.missionScrollText {
+  padding-top: 12rem;
+  padding-bottom: 20rem;
+}
+
+.missionReveal {
+  font-family: "Instrument Serif", serif;
+  font-size: 5rem;
+  line-height: 1.5;
+
+  max-width: 1400px;
+
+  color: #4d5a73;
+  margin-bottom: 7rem;
+
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.missionVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.missionBig {
+  font-family: "Instrument Serif", serif;
+  font-size: clamp(7rem, 10vw, 11rem);
+  line-height: 1;
+  color: #13203f;
+  max-width: 900px
+}
+
+.missionFinal {
+  font-family: "Instrument Serif", serif;
+  font-size: clamp(6rem, 7vw, 10rem);
+  line-height: 1;
+  color: #2054e4;
+  margin-top: 12rem;
+}
+
+.missionButtons {
+  display: flex;
+  gap: 3rem;
+  margin-top: 4.5rem;
+  align-items: center;
+}
+
+.tryButton {
+  background: #2054e4;
+  color: white;
+  border: none;
+
+  padding: 2rem 4rem;
+
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tryButton:hover {
+  transform: translateY(-2px);
+}
+
+.homeButton {
+  background: transparent;
+  color: #13203f;
+
+  border: 1px solid #13203f;
+
+  padding: 2rem 4rem;
+
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.homeButton:hover {
+  background: #13203f;
+  color: white;
+}
+
+.missionButton {
+  background: #63c84d; /* green from engineer/beam */
+  border: 1px solid #63c84d;
+  color: white;
+
+  padding: 1.5rem 3rem;
+
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 2rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.missionButton:hover {
+  transform: translateY(-2px);
+  filter: brightness(0.95);
+}
+
+.sceneFourButtons {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  margin-top: 12rem;
 }

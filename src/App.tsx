@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./App.css";
 
 function App() {
@@ -32,6 +32,28 @@ function App() {
       setSceneThreeStarted(true);
     }
   };
+  useEffect(() => {
+  const revealItems = document.querySelectorAll(".missionReveal");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("missionVisible");
+        }
+      });
+    },
+    {
+      threshold: 0.25,
+    }
+  );
+
+  revealItems.forEach((item) => observer.observe(item));
+
+  return () => {
+    revealItems.forEach((item) => observer.unobserve(item));
+  };
+}, []);
 
   return (
     <main className="app">
@@ -281,6 +303,14 @@ function App() {
   <p>None of them were wrong.</p>
   <h3>They were answering different lives.</h3>
 
+  <div className="sceneFourButtons">
+  <button
+    className="missionButton"
+    onClick={() => scrollToSection("example")}
+  >
+    MY MISSION
+  </button>
+
   <button
     className="backHomeButton"
     onClick={() =>
@@ -290,8 +320,9 @@ function App() {
       })
     }
   >
-    GO TO HOMEPAGE
+    BACK TO HOMEPAGE
   </button>
+</div>
 </div>
   </div>
 </section>
@@ -302,9 +333,90 @@ function App() {
         </div>
       </section>
 
-      <section id="example" className="placeholderSection">
-        <h2>My Mission</h2>
-      </section>
+          <section id="example" className="missionSection">
+  <div className="missionGrid">
+    <div className="missionSticky">
+      <p className="missionLabel">MY MISSION</p>
+
+      <h2 className="missionTitle">
+        Why This
+        <br />
+        Project Exists
+      </h2>
+
+      <p className="missionSideText">
+        Perspective is my way of exploring how recommendations are shaped,
+        and why the answer is not always the whole story.
+      </p>
+    </div>
+
+    <div className="missionScrollText">
+      <p className="missionReveal">
+        I built Perspective because I started thinking more about how I make
+        decisions.
+      </p>
+
+      <p className="missionReveal">
+        Most of the time, I search for information, read a few sources, and
+        form an opinion.
+      </p>
+
+      <p className="missionReveal">
+        Sometimes that information comes from articles, sometimes from search
+        results, and more recently, from AI.
+      </p>
+
+      <p className="missionReveal">
+        What stood out to me was how easy it is to accept the first answer we
+        see.
+      </p>
+
+      <p className="missionReveal missionBig">
+        But the first answer isn't always the full picture.
+      </p>
+
+      <p className="missionReveal">
+        Different sources can emphasize different facts. Different people can
+        look at the same information and come to different conclusions.
+      </p>
+
+      <p className="missionReveal">
+        AI can do the same.
+      </p>
+
+      <p className="missionReveal">
+        As I learned more about AI, I became interested in the ethical
+        questions behind it and how recommendations are shaped by assumptions,
+        priorities, and perspective.
+      </p>
+
+      <p className="missionReveal missionFinal">
+  In the end, the decision is theirs to make.
+</p>
+
+<div className="missionButtons">
+  <button
+    className="tryButton"
+    onClick={() => scrollToSection("demo")}
+  >
+    TRY IT OUT
+  </button>
+
+  <button
+    className="homeButton"
+    onClick={() =>
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      })
+    }
+  >
+    BACK TO HOMEPAGE
+  </button>
+</div>
+    </div>
+  </div>
+</section>  
 
       <section id="demo" className="placeholderSection">
         <h2>Try It Out</h2>
