@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Sans:wght@400;500;600&display=swap");
-
 * {
   margin: 0;
   padding: 0;
@@ -15,56 +14,84 @@ body,
 
 body {
   font-family: "IBM Plex Sans", sans-serif;
-  background: #e3e7ed;
+}
+
+.nav a,
+.project-label,
+.subtitle,
+.cta {
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+.headline {
+  font-family: "Instrument Serif", serif;
 }
 
 .landingPage {
   min-height: 100vh;
   position: relative;
   overflow: hidden;
+
   background:
-    radial-gradient(circle at 70% 35%, rgba(255, 255, 255, 0.45), transparent 28%),
-    radial-gradient(circle at 15% 80%, rgba(255, 255, 255, 0.2), transparent 34%),
+    radial-gradient(circle at 70% 35%, rgba(255,255,255,0.45), transparent 28%),
+    radial-gradient(circle at 15% 80%, rgba(255,255,255,0.2), transparent 34%),
     #e3e7ed;
 }
 
+
+
+
+
+.navLinks {
+  display: flex;
+  gap: 90px;
+}
+
+.navLinks a {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 6rem;
+  font-weight: 500;
+  color: #000;
+  text-decoration: none;
+}
+
 .heroContent {
-  min-height: 100vh;
-  position: relative;
+  min-height: calc(100vh - 120px);
 }
 
 .textSide {
   position: absolute;
   z-index: 5;
-  left: 8vw;
-  top: 50%;
-  transform: translateY(-50%);
-  width: min(760px, 52vw);
+  left: 240px;
+  top: 47%;
+  transform: translateY(-45%);
+  width: 1200px;
 }
-
 .projectName {
-  font-family: "Instrument Serif", serif;
-  font-size: clamp(1rem, 4vw, 5rem);
+font-family: "Instrument Serif", serif;  font-size: 15rem;
   font-weight: 500;
   letter-spacing: 0.08em;
+  text-transform: none;
+
   color: #2054e4;
-  margin-bottom: 1.5rem;
+
+  margin-bottom: 24px;
 }
 
 .textSide h1 {
   font-family: "Instrument Serif", serif;
-  font-size: clamp(2.5rem, 3.5vw, 4rem);
+
+  font-size: 13rem;
   line-height: 0.95;
   letter-spacing: -0.04em;
   font-weight: 400;
-  color: #13203f;
-  margin-bottom: 2rem;
-}
 
-.textSide h1 span,
-.textSide p span {
+  color: #13203f;
+
+  margin-bottom: 40px;
+}
+.textSide h1 span {
   display: block;
-  white-space: nowrap;
 }
 
 .textSide h1 em {
@@ -72,13 +99,55 @@ body {
   color: #2054e4;
 }
 
+.textSide h1 span {
+  display: block;
+  white-space: nowrap;
+}
+
 .textSide p {
-  font-family: "Instrument Serif", serif;
-  font-size: clamp(0.6rem, 1.5vw, 2rem);
+font-family: "Instrument Serif", serif;
+  font-size: 6rem;
   font-weight: 400;
-  line-height: 1.6;
+  line-height: 1.7;
+
   color: #4d5a73;
-  margin-bottom: 2rem;
+
+  margin-bottom: 40px;
+}
+
+.textSide p span {
+  display: block;
+}
+
+.textSide p span {
+  display: block;
+  white-space: nowrap;
+}
+
+.textSide button {
+  background: none;
+  border: none;
+  padding: 0;
+
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 6rem;
+  font-weight: 500;
+
+  color: #182033;
+
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+.textSide button:hover {
+  transform: translateX(6px);
+}
+
+.textSide button:hover {
+  color: #666;
+
+  transform: translateX(6px);
 }
 
 .lightSide {
@@ -93,121 +162,36 @@ body {
   top: 50%;
   left: 0;
   width: 58%;
-  height: 18px;
+  height: 50px;
+
   transform: translateY(-50%);
   transform-origin: left center;
+
   background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(220, 240, 255, 0.15) 20%,
-    rgba(255, 255, 255, 0.85) 55%,
-    rgba(255, 255, 255, 1) 100%
-  );
-  box-shadow:
-    0 0 18px rgba(255, 255, 255, 1),
-    0 0 45px rgba(220, 240, 255, 0.85),
-    0 0 90px rgba(220, 240, 255, 0.45);
-  animation: beamArrives 3.8s ease-in-out infinite;
+  90deg,
+  transparent 0%,
+  rgba(220, 240, 255, 0.15) 20%,
+  rgba(255, 255, 255, 0.85) 55%,
+  rgba(255, 255, 255, 1) 100%
+);
+
+box-shadow:
+  0 0 25px rgba(255, 255, 255, 1),
+  0 0 60px rgba(220, 240, 255, 0.9),
+  0 0 120px rgba(220, 240, 255, 0.55),
+  0 0 180px rgba(220, 240, 255, 0.3);
+
+}
+
+
+
+.ray {
+  animation: raysSplit 3.8s ease-in-out infinite;
 }
 
 .splitDot {
-  position: absolute;
-  top: 50%;
-  left: 58%;
-  width: 24px;
-  height: 24px;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  background: #fff;
-  box-shadow:
-    0 0 22px rgba(255, 255, 255, 1),
-    0 0 55px rgba(255, 255, 255, 0.9),
-    0 0 95px rgba(255, 255, 255, 0.65);
-  z-index: 3;
   animation: dotFlash 3.8s ease-in-out infinite;
 }
-
-.ray {
-  position: absolute;
-  top: 50%;
-  left: 58%;
-  width: 42%;
-  height: 10px;
-  transform-origin: left center;
-  border-radius: 999px;
-  opacity: 0.82;
-  animation:
-    raysSplit 3.8s ease-in-out infinite,
-    rayGlow 3.4s ease-in-out infinite;
-}
-
-.redRay {
-  transform: rotate(-24deg);
-  background: linear-gradient(90deg, #ef4444, transparent);
-  box-shadow: 0 0 14px rgba(239, 68, 68, 0.5);
-}
-
-.orangeRay {
-  transform: rotate(-14deg);
-  background: linear-gradient(90deg, #fb923c, transparent);
-  box-shadow: 0 0 14px rgba(251, 146, 60, 0.5);
-}
-
-.yellowRay {
-  transform: rotate(-5deg);
-  background: linear-gradient(90deg, #eab308, transparent);
-  box-shadow: 0 0 14px rgba(234, 179, 8, 0.45);
-}
-
-.greenRay {
-  transform: rotate(4deg);
-  background: linear-gradient(90deg, #22c55e, transparent);
-  box-shadow: 0 0 14px rgba(34, 197, 94, 0.45);
-}
-
-.blueRay {
-  transform: rotate(14deg);
-  background: linear-gradient(90deg, #3b82f6, transparent);
-  box-shadow: 0 0 14px rgba(59, 130, 246, 0.5);
-}
-
-.purpleRay {
-  transform: rotate(24deg);
-  background: linear-gradient(90deg, #8b5cf6, transparent);
-  box-shadow: 0 0 14px rgba(139, 92, 246, 0.5);
-}
-
-.exploreNav {
-  position: absolute;
-  left: 8vw;
-  bottom: 17vh;
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  z-index: 20;
-  pointer-events: auto;
-}
-
-.exploreNav button {
-  font-family: "IBM Plex Sans", sans-serif;
-  font-size: 0.6rem;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  color: #182033;
-  padding: 0.8rem 1.6rem;
-  border: 1px solid rgba(19, 32, 63, 0.2);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.32);
-  cursor: pointer;
-  transition: all 0.25s ease;
-}
-
-.exploreNav button:hover {
-  background: rgba(127, 184, 255, 0.18);
-  color: #2054e4;
-  transform: translateY(-2px);
-}
-
 @keyframes beamArrives {
   0% {
     clip-path: inset(0 100% 0 0);
@@ -227,6 +211,7 @@ body {
     filter: brightness(1);
   }
 }
+
 
 @keyframes raysSplit {
   0%,
@@ -264,6 +249,81 @@ body {
   }
 }
 
+.splitDot {
+  position: absolute;
+  top: 50%;
+  left: 58%;
+  width: 34px;
+  height: 34px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: #fff;
+  box-shadow:
+    0 0 30px rgba(255, 255, 255, 1),
+    0 0 80px rgba(255, 255, 255, 0.95),
+    0 0 130px rgba(255, 255, 255, 0.75);
+  z-index: 3;
+}
+
+.ray {
+  position: absolute;
+  top: 50%;
+  left: 58%;
+  width: 45%;
+  height: 14px;
+  transform-origin: left center;
+  border-radius: 999px;
+  opacity: 0.82;
+  animation: rayGlow 3.4s ease-in-out infinite;
+}
+
+.redRay {
+  transform: rotate(-24deg);
+  background: linear-gradient(90deg, #ef4444, transparent);
+  box-shadow: 0 0 22px rgba(239, 68, 68, 0.5);
+}
+
+.orangeRay {
+  transform: rotate(-14deg);
+  background: linear-gradient(90deg, #fb923c, transparent);
+  box-shadow: 0 0 22px rgba(251, 146, 60, 0.5);
+}
+
+.yellowRay {
+  transform: rotate(-5deg);
+  background: linear-gradient(90deg, #eab308, transparent);
+  box-shadow: 0 0 22px rgba(234, 179, 8, 0.45);
+}
+
+.greenRay {
+  transform: rotate(4deg);
+  background: linear-gradient(90deg, #22c55e, transparent);
+  box-shadow: 0 0 22px rgba(34, 197, 94, 0.45);
+}
+
+.blueRay {
+  transform: rotate(14deg);
+  background: linear-gradient(90deg, #3b82f6, transparent);
+  box-shadow: 0 0 22px rgba(59, 130, 246, 0.5);
+}
+
+.purpleRay {
+  transform: rotate(24deg);
+  background: linear-gradient(90deg, #8b5cf6, transparent);
+  box-shadow: 0 0 22px rgba(139, 92, 246, 0.5);
+}
+
+@keyframes whitePulse {
+  0%,
+  100% {
+    opacity: 0.65;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
 @keyframes rayGlow {
   0%,
   100% {
@@ -274,9 +334,101 @@ body {
     opacity: 0.95;
   }
 }
+.exploreNav {
+  position: absolute;
+  right: 53%;
+  top: 80%;
+  transform: translateX(-50%);
+
+  display: flex;
+  align-items: center;
+  gap: 340px;
+
+  z-index: 20;
+  pointer-events: auto;
+}
+
+
+
+.exploreNav a {
+  text-decoration: none;
+  font-family: "Instrument Serif", serif;
+  font-size: 5rem;
+  font-weight: 500;
+
+  color: #182033;
+
+  padding: 10px 18px;
+  border-radius: 8px;
+  transition: all 0.25s ease;
+}
+
+.exploreNav a:hover {
+  background: rgba(127, 184, 255, 0.18);
+  color: #6f92cf;
+}
+
+
+@media (max-width: 900px) {
+  .navBar {
+    height: 80px;
+    padding: 0 28px;
+  }
+
+  .logo {
+    font-size: 2.8rem;
+  }
+
+  .navLinks {
+    gap: 24px;
+  }
+
+  .navLinks a {
+    font-size: 1rem;
+  }
+
+  .textSide {
+    left: 28px;
+    right: 28px;
+    width: auto;
+  }
+
+  .textSide h1 {
+    font-size: 14rem;
+  }
+
+  .textSide p {
+    font-size: 1.1rem;
+    white-space: normal;
+  }
+
+  .lightSide {
+    opacity: 0.45;
+  }
+}
+
 
 html {
   scroll-behavior: smooth;
+}
+
+.exploreNav button {
+  text-decoration: none;
+  font-family: "Instrument Serif", serif;
+  font-size: 5rem;
+  font-weight: 500;
+  color: #182033;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.exploreNav button:hover {
+  background: rgba(127, 184, 255, 0.18);
+  color: #6f92cf;
 }
 
 .horizontalParallax {
@@ -295,7 +447,7 @@ html {
 }
 
 .horizontalScroller::-webkit-scrollbar {
-  height: 8px;
+  height: 12px;
 }
 
 .horizontalScroller::-webkit-scrollbar-thumb {
@@ -308,8 +460,10 @@ html {
   top: 50%;
   left: 0;
   width: 500vw;
-  height: 18px;
+  height: 34px;
+
   transform: translateY(-50%);
+
   background: linear-gradient(
     90deg,
     white 0%,
@@ -321,9 +475,11 @@ html {
     #3b82f6 85%,
     #8b5cf6 100%
   );
+
   box-shadow:
-    0 0 24px white,
-    0 0 70px rgba(220, 240, 255, 0.85);
+    0 0 35px white,
+    0 0 100px rgba(220, 240, 255, 0.95);
+
   z-index: 1;
   pointer-events: none;
 }
@@ -339,39 +495,42 @@ html {
 .parallaxSlide {
   width: 100vw;
   height: 100vh;
+
   flex-shrink: 0;
+
   scroll-snap-align: start;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
+
   padding: 0 8vw;
 }
 
 .parallaxSlide p {
   font-family: "IBM Plex Sans", sans-serif;
-  font-size: clamp(1rem, 1.4vw, 1.6rem);
+  font-size: 3rem;
   color: #4d5a73;
-  margin-bottom: 1.5rem;
+  margin-bottom: 24px;
 }
 
 .parallaxSlide h2 {
   font-family: "Instrument Serif", serif;
-  font-size: clamp(2rem, 2.5vw, 3rem);
+  font-size: 12rem;
   line-height: 0.95;
   font-weight: 400;
   color: #13203f;
-  max-width: 1100px;
+  max-width: 1400px;
 }
 
 .parallaxSlide h3 {
-  margin-top: 3rem;
+  margin-top: 56px;
   font-family: "Instrument Serif", serif;
-  font-size: clamp(2.8rem, 5vw, 5rem);
+  font-size: 7rem;
   line-height: 1;
   font-weight: 400;
   color: #2054e4;
 }
-
 .fadeIn1,
 .fadeIn2,
 .fadeIn3,
@@ -386,21 +545,10 @@ html {
   animation-delay: 0.3s;
 }
 
-.fadeIn2 {
-  animation-delay: 1.5s;
-}
-
-.fadeIn3 {
-  animation-delay: 2.5s;
-}
-
-.fadeIn4 {
-  animation-delay: 3.5s;
-}
-
-.fadeIn5 {
-  animation-delay: 5s;
-}
+.fadeIn2 { animation-delay: 1.5s; }
+.fadeIn3 { animation-delay: 2.5s; }
+.fadeIn4 { animation-delay: 3.5s; }
+.fadeIn5 { animation-delay: 5s; }
 
 @keyframes fadeUp {
   from {
@@ -415,42 +563,49 @@ html {
 }
 
 .hookLabel {
-  font-size: clamp(1.2rem, 1.5vw, 1.8rem);
+  font-size: 4rem;
   color: #2054e4;
-  margin-bottom: 1.5rem;
+  margin-bottom: 24px;
 }
 
 .hookQuestion {
-  font-size: clamp(3rem, 3.2vw, 5.2rem);
-  max-width: 1100px;
+  font-size: 20rem;
+  max-width: 1400px;
 }
 
 .recommendationPaths {
   display: flex;
-  gap: 1.5rem;
-  margin-top: 3rem;
+  gap: 40px;
+  margin-top: 70px;
 }
 
 .pathCard {
-  padding: 1.5rem;
-  border-radius: 1.5rem;
-  background: rgba(255, 255, 255, 0.75);
+  padding: 30px;
+  border-radius: 28px;
+
+  background: rgba(255,255,255,0.75);
   backdrop-filter: blur(18px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
+
+  box-shadow:
+    0 15px 40px rgba(0,0,0,0.05);
 }
 
 .pathCard span {
   display: block;
-  margin-bottom: 0.2rem;
+
+  margin-bottom: 12px;
+
   font-family: "IBM Plex Sans", sans-serif;
-  font-size: 0.95rem;
+
+  font-size: 3rem;
   font-weight: 700;
+
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
 .pathCard p {
-  font-size: clamp(1.1rem, 1.6vw, 1.7rem);
+  font-size: 4rem;
   margin: 0;
 }
 
@@ -467,17 +622,19 @@ html {
 }
 
 .hookReveal {
-  margin-top: 3rem;
+  margin-top: 80px;
 }
 
 .hookReveal p {
-  font-size: clamp(1.2rem, 1.4vw, 2.2rem);
+  font-size: 4rem;
 }
 
 .hookReveal h3 {
-  font-size: clamp(2rem, 2vw, 4rem);
+  font-size: 8rem;
   color: #2054e4;
 }
+
+
 
 .sceneThree {
   justify-content: center;
@@ -485,104 +642,137 @@ html {
 }
 
 .sceneLabel {
-  font-size: 1.2rem;
+  font-size: 2rem;
   color: #2054e4;
-  margin-bottom: 3rem;
+  margin-bottom: 60px;
 }
 
 .layerStack {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 12px;
 }
 
 .layerStack h2 {
-  font-size: clamp(4rem, 7vw, 7rem);
+  font-size: 10rem;
   line-height: 0.9;
 }
 
 .layerDescription {
-  margin-top: 3rem;
-  font-size: clamp(1.2rem, 2vw, 1.8rem);
+  margin-top: 60px;
+  font-size: 2.5rem;
 }
-
 .sceneTwo {
   justify-content: center;
 }
 
 .sceneTwoQuestion {
-  font-size: clamp(1.8rem, 2.5vw, 3rem);
+  font-size: 5rem;
   color: #13203f;
-  margin-bottom: 2.5rem;
+  margin-bottom: 60px;
 }
 
 .sceneTwoQuestion em {
   font-family: "Instrument Serif", serif;
-  font-size: clamp(2.2rem, 3vw, 4rem);
+  font-size: 6rem;
   font-style: italic;
   color: #ef4444;
 }
 
 .sceneTwoMain {
-  font-size: clamp(3.3rem, 4vw, 6rem);
+  font-size: 8rem;
   line-height: 0.95;
-  max-width: 1100px;
+  max-width: 1600px;
 }
 
 .sceneTwoReason {
-  margin-top: 3rem;
+  margin-top: 70px;
   font-family: "Instrument Serif", serif;
-  font-size: clamp(2.8rem, 5vw, 5rem);
+  font-size: 6rem;
   line-height: 0.95;
   font-weight: 400;
-  color: #2054e4;
-}
-
-.parallaxSlide .sceneTwoHuman {
-  margin-top: 3rem;
-  font-family: "IBM Plex Sans", sans-serif;
-  font-size: clamp(1.4rem, 2vw, 2rem);
-  line-height: 1.45;
   color: #13203f;
 }
 
+.parallaxSlide .sceneTwoHuman {
+  margin-top: 60px;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 4.5rem !important;
+  line-height: 1.35;
+  color: #000000;
+}
+
 .parallaxSlide .sceneTwoFinal {
-  margin-top: 2rem;
+  margin-top: 40px;
   font-family: "Instrument Serif", serif;
-  font-size: clamp(3rem, 4vw, 5rem);
+  font-size: 8rem !important;
   font-style: italic;
   color: #ef4444;
 }
 
+.parallaxSlide .sceneTwoMain {
+  font-size: 12rem;
+  line-height: 0.9;
+  max-width: 1700px;
+}
+
+.parallaxSlide .sceneTwoReason {
+  font-size: 8rem;
+  color: #2054e4;
+}
+
+.parallaxSlide .sceneTwoFinal {
+  font-size: 5.5rem;
+}
+
+.sceneTwoQuestion em {
+  font-size: 5rem;
+}
+
 .sceneThree {
   justify-content: center;
-  position: relative;
 }
 
 .sceneLabel {
-  font-size: clamp(1.4rem, 2vw, 2rem);
+  font-size: 3rem;
   color: #2054e4;
-  margin-bottom: 4rem;
+  margin-bottom: 120px;
+}
+.sceneThree {
+  justify-content: center;
+}
+
+
+
+
+.sceneThree .sceneLabel {
+  font-size: 5rem;
+  color: #2054e4;
+  margin-bottom: 120px;
 }
 
 .beamFramework {
   position: relative;
   width: 100%;
-  height: 360px;
-  transform: translateY(-20px);
+  height: 520px;
+  transform: translateY(-80px);
 }
+
 
 .frameworkItem {
   position: absolute;
-  top: 55%;
+  top: 62%;
   z-index: 5;
+
   transform: translateY(-50%);
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  opacity: 0;
-}
 
+  opacity: 0;
+  
+}
 .frameworkFade1 {
   animation: frameworkReveal 0.8s ease forwards;
   animation-delay: 0.2s;
@@ -611,77 +801,94 @@ html {
 
 .frameworkItem span {
   font-family: "Instrument Serif", serif;
-  font-size: clamp(2.8rem, 4.5vw, 5rem);
+  font-size: 8rem;
   line-height: 1;
   color: #13203f;
+
   background: rgba(227, 231, 237, 0.95);
-  padding: 0.5rem 1.2rem;
-  border-radius: 0.9rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  padding: 8px 20px;
+  border-radius: 14px;
+
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.04);
+
   order: 2;
 }
 
 .frameworkItem p {
   position: absolute;
-  width: 220px;
+  width: 360px;
+
   font-family: "IBM Plex Sans", sans-serif;
-  font-size: clamp(1rem, 1.4vw, 1.35rem);
-  line-height: 1.35;
+  font-size: 4rem;
+  line-height: 1.25;
   text-align: center;
   color: #4d5a73;
+
   margin: 0;
 }
+
 
 .frameworkItem::after {
   content: "";
   position: absolute;
-  left: 50%;
-  width: 3px;
-  height: 170px;
+  left: 45%;
+  width: 6px;
+  height: 570px;
+
   background: rgba(32, 84, 228, 0.55);
-  box-shadow: 0 0 14px rgba(32, 84, 228, 0.3);
+  box-shadow: 0 0 18px rgba(32, 84, 228, 0.35);
+
   transform: translateX(-50%) scaleY(0);
   animation: lineGrow 0.8s ease forwards;
 }
 
+/* positions across beam */
 .evidenceItem {
   left: 8%;
+  animation-delay: 0.4s;
 }
 
 .assumptionsItem {
   left: 32%;
+  animation-delay: 1.2s;
 }
 
 .valuesItem {
   left: 58%;
+  animation-delay: 2s;
 }
 
 .biasItem {
   left: 80%;
+  animation-delay: 2.8s;
 }
 
+/* explanation ABOVE the beam */
 .evidenceItem p,
 .valuesItem p {
-  bottom: 200px;
+  bottom: 600px;
 }
 
 .evidenceItem::after,
 .valuesItem::after {
-  bottom: 10px;
+  bottom: 12px;
   transform-origin: bottom;
 }
 
+/* explanation BELOW the beam */
 .assumptionsItem p,
 .biasItem p {
-  top: 200px;
+  top: 600px;
 }
 
 .assumptionsItem::after,
 .biasItem::after {
-  top: 10px;
+  top: 12px;
   transform-origin: top;
 }
 
+/* matching delays for lines */
 .evidenceItem::after {
   animation-delay: 0.4s;
 }
@@ -697,23 +904,23 @@ html {
 .biasItem::after {
   animation-delay: 2.8s;
 }
+
 .frameworkClosing {
   position: absolute;
-  left: 8vw;
-  bottom: 8vh;
+  left: 4vw;
+  bottom: 590px;
 
-  font-family: "Instrument Serif", serif;
-  font-size: 2rem;
-  line-height: 1;
-
+  font-size: 5.5rem;
+  line-height: 0.8;
   color: #2054e4;
 }
-
 .frameworkClosing em {
   font-style: italic;
   color: #000000;
-  font-size: inherit;
+  font-size: 6rem;
+
 }
+
 
 @keyframes frameworkReveal {
   from {
@@ -736,7 +943,6 @@ html {
     transform: translateX(-50%) scaleY(1);
   }
 }
-
 .sceneFour {
   position: relative;
   overflow: hidden;
@@ -744,23 +950,30 @@ html {
 
 .sceneFourContent {
   position: relative;
+  top: 20rem; /* moves entire scene down */
+
   z-index: 2;
   width: 100%;
   height: 100%;
-  padding: 8vh 8vw 6vh;
+
+  padding: 10vh 9vw 7vh;
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #13203f;
+
+  color: #f8f4ec;
 }
 
 .sceneFourHeader {
+  position: relative;
+  top: -8rem;
   text-align: center;
 }
 
 .sceneFourKicker {
   font-family: "IBM Plex Sans", sans-serif;
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   margin: 0;
@@ -769,30 +982,95 @@ html {
 
 .sceneFourTitle {
   font-family: "Instrument Serif", serif;
-  font-size: clamp(4rem, 8vw, 8rem);
+  font-size: clamp(10rem, 15vw, 15rem);
   font-style: italic;
   font-weight: 400;
-  margin: 1rem 0 3rem;
+  margin: 2rem 0 4.5rem;
 }
 
 .peopleRow {
   width: 100%;
   display: flex;
   justify-content: center;
-  gap: 2rem;
-  margin: 1rem 0 2rem;
+  gap: 15rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.personCard {
+  position: relative;
+  width: 30%;
+  min-height: 340px;
+  padding: 2rem;
+  border: 1px solid rgba(0, 0, 0, 0.28);
+  background: rgba(52, 159, 205, 0.08);
+  backdrop-filter: blur(10px);
+}
+
+.personLine {
+  position: absolute;
+  top: -65px;
+  left: 50%;
+  width: 1px;
+  height: 65px;
+  background: rgba(6, 6, 6, 0.75);
+}
+
+.personLabel {
+  font-family: "Instrument Serif", serif;
+  font-size: 6rem;
+  margin-bottom: 1rem;
+}
+
+.personCard p {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 3.5rem;
+  line-height: 1.6;
+  margin: 0.25rem 0;
+  opacity: 0.88;
+}
+
+.personCard span {
+  display: block;
+  margin-top: 3.5rem;
+  font-family: "Instrument Serif", serif;
+  font-size: 5rem;
+  font-style: italic;
+  color: #000000;
+}
+
+.sceneFourEnding {
+  margin-top: 16rem;
+  text-align: center;
+}
+
+.sceneFourEnding p {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 4rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.75;
+  margin-bottom: 0.5rem;
+}
+
+.sceneFourEnding h3 {
+  font-family: "Instrument Serif", serif;
+  font-size: clamp(2.4rem, 5vw, 7rem);
+  font-weight: 400;
+  font-style: italic;
+  margin: 0;
 }
 
 .flipCard {
-  width: min(320px, 30%);
-  min-height: 260px;
+  width: 36%;
+  min-height: 380px;
   perspective: 1200px;
 }
 
 .flipCardInner {
   position: relative;
   width: 100%;
-  min-height: 260px;
+  min-height: 320px;
   transition: transform 0.8s ease;
   transform-style: preserve-3d;
 }
@@ -805,16 +1083,14 @@ html {
 .flipCardBack {
   position: absolute;
   inset: 0;
-  padding: 1.6rem;
-  border: 1px solid rgba(19, 32, 63, 0.16);
-  background: rgba(255, 255, 255, 0.62);
+  padding: 2.4rem;
+  border: 1px solid rgba(248, 244, 236, 0.28);
+  background: rgba(248, 244, 236, 0.08);
   backdrop-filter: blur(10px);
   backface-visibility: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border-radius: 1.4rem;
-  box-shadow: 0 1rem 2.5rem rgba(19, 32, 63, 0.08);
 }
 
 .flipCardBack {
@@ -836,46 +1112,27 @@ html {
   border-top: 4px solid #43b8d6;
 }
 
-.personTitle {
-  font-family: "Instrument Serif", serif;
-  font-size: clamp(1.8rem, 2.4vw, 2.4rem);
-  font-weight: 400;
-  margin: 0 0 1.2rem;
-  line-height: 1;
-}
-
-.studentCard .personTitle {
-  color: #f2b632;
-}
-
-.engineerCard .personTitle {
-  color: #61c554;
-}
-
-.parentCard .personTitle {
-  color: #43b8d6;
-}
-
 .flipCardFront p {
-  font-family: "IBM Plex Sans", sans-serif;
-  font-size: clamp(0.95rem, 1.2vw, 1.15rem);
-  line-height: 1.6;
-  margin: 0.25rem 0;
-  color: #4d5a73;
+  font-family: "Instrument Serif", serif;
+  font-size: 5rem;
+  line-height: 1.5;
+  margin: 0.4rem 0;
 }
+
+
 
 .flipCardBack p {
   font-family: "IBM Plex Sans", sans-serif;
-  font-size: 0.75rem;
+  font-size: 2.5rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #4d5a73;
+  opacity: 0.7;
   margin: 0 0 1rem;
 }
 
 .flipCardBack h3 {
   font-family: "Instrument Serif", serif;
-  font-size: clamp(2.4rem, 3.5vw, 4rem);
+  font-size: 7.5rem;
   font-style: italic;
   font-weight: 400;
   line-height: 1;
@@ -894,63 +1151,48 @@ html {
   color: #43b8d6;
 }
 
-.sceneFourEnding {
-  margin-top: 2.5rem;
-  text-align: center;
-}
+.personTitle {
+  position: relative;
+  top: -3rem;
 
-.sceneFourEnding p {
-  font-family: "IBM Plex Sans", sans-serif;
-  font-size: 0.9rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #4d5a73;
-  margin-bottom: 0.75rem;
-}
-
-.sceneFourEnding h3 {
   font-family: "Instrument Serif", serif;
-  font-size: clamp(2.4rem, 4vw, 4.8rem);
+  font-size: 2.3rem;
   font-weight: 400;
-  font-style: italic;
-  margin: 0;
-  color: #13203f;
+  margin: 0 0 1.25rem 0;
+  line-height: 1;
 }
 
-.sceneFourButtons {
-  display: flex;
-  justify-content: center;
-  gap: 1.2rem;
-  margin-top: 2rem;
+.studentCard .personTitle {
+  color: #f2b632;
 }
 
-.missionButton,
-.backHomeButton {
-  padding: 0.9rem 1.4rem;
-  font-family: "IBM Plex Sans", sans-serif;
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: all 0.25s ease;
-  border-radius: 999px;
+.engineerCard .personTitle {
+  color: #61c554;
 }
 
-.missionButton {
-  background: #63c84d;
-  border: 1px solid #63c84d;
-  color: white;
+.parentCard .personTitle {
+  color: #43b8d6;
 }
 
 .backHomeButton {
   background: transparent;
   border: 1px solid #13203f;
   color: #13203f;
+
+  padding: 1.5rem 3rem;
+  margin-top: 1rem;
+
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 2rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+
+  cursor: pointer;
+  transition: all 0.25s ease;
 }
 
-.missionButton:hover,
 .backHomeButton:hover {
+  color: #1c2c4e;
   transform: translateY(-2px);
 }
 
@@ -977,7 +1219,7 @@ html {
 
 .missionLabel {
   font-family: "IBM Plex Sans", sans-serif;
-  font-size: 2rem;
+  font-size: 4.5rem;
   letter-spacing: 0.3em;
   text-transform: uppercase;
   color: #2054e4;
@@ -986,7 +1228,7 @@ html {
 
 .missionTitle {
   font-family: "Instrument Serif", serif;
-  font-size: clamp(3rem, 4vw, 4rem);
+  font-size: clamp(9rem, 9vw, 14rem);
   line-height: 0.9;
   font-weight: 400;
   color: #13203f;
@@ -995,7 +1237,7 @@ html {
 
 .missionSideText {
   font-family: "Instrument Serif", serif;
-  font-size: 2rem;
+  font-size: 4.5rem;
   line-height: 1.5;
   color: #20242d;
   max-width: 760px;
@@ -1008,13 +1250,13 @@ html {
 
 .missionReveal {
   font-family: "Instrument Serif", serif;
-  font-size: 1.5rem;
+  font-size: 5rem;
   line-height: 1.5;
 
   max-width: 1400px;
 
   color: #4d5a73;
-  margin-bottom: 2rem;
+  margin-bottom: 7rem;
 
   opacity: 0;
   transform: translateY(40px);
@@ -1028,7 +1270,7 @@ html {
 
 .missionBig {
   font-family: "Instrument Serif", serif;
-  font-size: clamp(3rem, 4vw, 4rem);
+  font-size: clamp(7rem, 10vw, 11rem);
   line-height: 1;
   color: #13203f;
   max-width: 900px
@@ -1036,10 +1278,10 @@ html {
 
 .missionFinal {
   font-family: "Instrument Serif", serif;
-  font-size: clamp(3rem, 4vw, 4rem);
+  font-size: clamp(6rem, 7vw, 10rem);
   line-height: 1;
   color: #2054e4;
-  margin-top: 0rem;
+  margin-top: 12rem;
 }
 
 .missionButtons {
@@ -1054,10 +1296,10 @@ html {
   color: white;
   border: none;
 
-  padding: 1rem 3rem;
+  padding: 2rem 4rem;
 
   font-family: "IBM Plex Sans", sans-serif;
-  font-size: 0.5rem;
+  font-size: 1.8rem;
   font-weight: 500;
   letter-spacing: 0.15em;
 
@@ -1075,10 +1317,10 @@ html {
 
   border: 1px solid #13203f;
 
-  padding: 1rem 3rem;
+  padding: 2rem 4rem;
 
   font-family: "IBM Plex Sans", sans-serif;
-  font-size: 0.5rem;
+  font-size: 1.8rem;
   font-weight: 500;
   letter-spacing: 0.15em;
 
@@ -1119,108 +1361,9 @@ html {
   margin-top: 12rem;
 }
 
-.hookSlide .hookQuestion {
-  font-size: 4.5rem !important;
-  max-width: 900px !important;
-}
-
-.sceneThree .frameworkClosing {
-  font-size: 2rem !important;
-  line-height: 1.05 !important;
-}
-
-.sceneTwoQuestion {
-  font-family: "IBM Plex Sans", sans-serif !important;
-  font-size: 1rem !important;
-}
-
-.sceneTwoMain {
-  font-family: "Instrument Serif", serif !important;
-  font-size: 2rem !important;
-  line-height: 1.05 !important;
-}
-
-.sceneTwoReason {
-  font-family: "Instrument Serif", serif !important;
-  font-size: 3.2rem !important;
-  line-height: 1.05 !important;
-  color: #2054e4 !important;
-}
-
-.sceneTwoHuman {
-  font-family: "Instrument Serif", serif !important;
-  font-size: 2rem !important;
-  line-height: 1.3 !important;
-  color: #13203f !important;
-}
-
-.sceneTwoFinal {
-  font-family: "Instrument Serif", serif !important;
-  font-size: 3rem !important;
-  line-height: 1.05 !important;
-  font-style: italic !important;
-  color: #ef4444 !important;
-}
-.personTitle {
-  font-size: 1.9rem !important;
-}
-
-.personCard p {
-  font-size: 1.4rem !important;
-  line-height: 1.5 !important;
-}
-
-.sceneFourEnding h3 {
-  font-size: 2rem !important;
-}
-
-.sceneFourEnding {
-  margin-top: 1.4rem !important;
-}
-
-.sceneFourButtons {
-  margin-top: 0.5rem !important;
-}
-.sceneFourButtons {
-  margin-top: 3.5rem !important;
-}
-
-.sceneFourButtons .missionButton,
-.sceneFourButtons .backHomeButton {
-  padding: 0.65rem 1rem !important;
-  font-size: 0.5rem !important;
-  letter-spacing: 0.12em !important;
-  min-width: auto !important;
-}
-
-.sceneFourButtons .missionButton {
-  border-radius: 999px !important;
-}
-
-.sceneFourButtons .backHomeButton {
-  border-radius: 999px !important;
-}
-
-.frameworkItem span {
-  font-family: "Instrument Serif", serif;
-  font-size: 2.4rem;
-  line-height: 1;
-  color: #13203f;
-  background: rgba(227, 231, 237, 0.95);
-  padding: 0.5rem 1.2rem;
-  border-radius: 0.9rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-  order: 2;
-}
-
-.missionFinal {
-  margin-bottom: 1rem !important;
-  font-size: 2.5rem !important;
-  line-height: 1.1 !important;
-}
-
 #demo {
   width: 100vw;
+  margin-left: calc(50% - 50vw);
   min-height: 100vh;
   background: #e7ebf2;
   overflow: hidden;
@@ -1228,114 +1371,117 @@ html {
 
 .tryItOutContainer {
   min-height: 100vh;
-  width: min(1200px, 86vw);
+  width: min(1400px, 86vw);
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: 1.25fr 0.9fr;
   align-items: center;
-  gap: 5rem;
-  padding: 6rem 0;
+  gap: 7rem;
+  padding: 8rem 0;
 }
 
 .tryLabel {
   font-family: "IBM Plex Sans", sans-serif;
-  font-size: 0.9rem;
-  letter-spacing: 0.35em;
+  font-size: 1rem;
+  letter-spacing: 0.42em;
   font-weight: 700;
-  color: #2054e4;
-  margin-bottom: 2rem;
+  color: #2563eb;
+  margin-bottom: 2.8rem;
 }
 
 .tryLeft h2 {
   font-family: "Instrument Serif", serif;
-  font-size: 4.8rem;
-  line-height: 0.9;
+  font-size: clamp(5.5rem, 8vw, 10rem);
+  line-height: 0.86;
   font-weight: 400;
-  color: #13203f;
+  color: #071735;
   margin: 0;
 }
 
 .tryLine {
-  width: 5rem;
-  height: 2px;
-  background: #2054e4;
-  margin: 2.5rem 0 2rem;
+  width: 7rem;
+  height: 0.18rem;
+  background: #2563eb;
+  margin: 3.8rem 0 3rem;
 }
 
 .tryDescription {
   font-family: "IBM Plex Sans", sans-serif;
-  font-size: 1.15rem;
-  line-height: 1.7;
-  color: #4d5a73;
-  max-width: 520px;
+  font-size: clamp(1.35rem, 1.6vw, 2rem);
+  line-height: 1.9;
+  color: #516078;
+  margin: 0;
 }
 
 .tryCard {
   background: rgba(255, 255, 255, 0.55);
-  border: 1px solid rgba(19, 32, 63, 0.14);
-  border-radius: 2rem;
-  padding: 3rem;
-  box-shadow: 0 2rem 5rem rgba(19, 32, 63, 0.1);
+  border: 1px solid rgba(7, 23, 53, 0.14);
+  border-radius: 2.4rem;
+  padding: 4rem;
+  box-shadow: 0 2rem 5rem rgba(7, 23, 53, 0.12);
 }
 
 .tryCard input {
   width: 100%;
-  height: 4.2rem;
-  padding: 0 1.4rem;
-  border: 1px solid rgba(19, 32, 63, 0.18);
+  height: 5.8rem;
+  padding: 0 2rem;
+  border: 1px solid rgba(7, 23, 53, 0.18);
   border-radius: 999px;
   font-family: "IBM Plex Sans", sans-serif;
-  font-size: 1rem;
+  font-size: 1.2rem;
+  color: #071735;
   outline: none;
-  margin-bottom: 1.4rem;
-  background: rgba(255, 255, 255, 0.78);
+  margin-bottom: 2rem;
+  background: rgba(255, 255, 255, 0.7);
 }
 
 .tryCard button {
   width: 100%;
-  height: 4.2rem;
+  height: 5.8rem;
   border: none;
   border-radius: 999px;
-  background: #2054e4;
+  background: #2563eb;
   color: white;
   font-family: "IBM Plex Sans", sans-serif;
-  font-size: 0.8rem;
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.22em;
+  font-size: 0.95rem;
   cursor: pointer;
 }
 
 .tryCard button span {
-  margin-left: 0.7rem;
+  margin-left: 1rem;
+  font-size: 1.4rem;
 }
 
 .tryDivider {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  gap: 1rem;
-  margin: 2.2rem 0 1.8rem;
+  gap: 1.4rem;
+  margin: 3rem 0 2.2rem;
 }
 
 .tryDivider div {
   height: 1px;
-  background: rgba(19, 32, 63, 0.14);
+  background: rgba(7, 23, 53, 0.14);
 }
 
 .tryDivider span {
-  width: 2.2rem;
-  height: 2.2rem;
+  color: #2563eb;
+  border: 1px solid rgba(7, 23, 53, 0.14);
+  border-radius: 50%;
+  width: 2.6rem;
+  height: 2.6rem;
   display: grid;
   place-items: center;
-  border-radius: 50%;
-  color: #2054e4;
   background: white;
-  border: 1px solid rgba(19, 32, 63, 0.14);
 }
 
 .tryHint {
   font-family: "IBM Plex Sans", sans-serif;
-  font-size: 1rem;
-  line-height: 1.7;
-  color: #4d5a73;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #516078;
+  margin: 0;
 }

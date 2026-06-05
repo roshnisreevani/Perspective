@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import "./App.css";
+import TryItOut from "./components/TryItOut";
 
 function App() {
   const [ideaStarted, setIdeaStarted] = useState(false);
@@ -419,8 +420,8 @@ function App() {
 </section>  
 
       <section id="demo" className="placeholderSection">
-        <h2>Try It Out</h2>
-      </section>
+  <TryItOut />
+</section>
     </main>
   );
 }
