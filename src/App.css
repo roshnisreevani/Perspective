@@ -1339,3 +1339,538 @@ html {
   line-height: 1.7;
   color: #4d5a73;
 }
+
+.tryRight {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.perspectiveResults {
+  background: rgba(255, 255, 255, 0.58);
+  border: 1px solid rgba(19, 32, 63, 0.14);
+  border-radius: 2rem;
+  padding: 2rem;
+  box-shadow: 0 2rem 5rem rgba(19, 32, 63, 0.08);
+}
+
+.resultsLabel {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.22em;
+  color: #2054e4;
+  font-weight: 700;
+  margin-bottom: 0.9rem;
+}
+
+.perspectiveResults h3 {
+  font-family: "Instrument Serif", serif;
+  font-size: 2rem;
+  line-height: 1.05;
+  color: #13203f;
+  margin-bottom: 1.4rem;
+}
+
+.resultGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.resultBox {
+  border: 1px solid rgba(19, 32, 63, 0.12);
+  border-radius: 1.2rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.resultBox span,
+.alternativePerspective span {
+  display: block;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #2054e4;
+  margin-bottom: 0.6rem;
+}
+
+.resultBox p,
+.alternativePerspective p {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: #4d5a73;
+  margin: 0;
+}
+
+.alternativePerspective {
+  margin-top: 1rem;
+  border-top: 1px solid rgba(19, 32, 63, 0.12);
+  padding-top: 1rem;
+}
+
+/* ===========================
+   TRY IT OUT
+=========================== */
+
+.tryItOut {
+  min-height: 100vh;
+  background: #e3e7ed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8rem 2rem;
+}
+
+.tryContent {
+  width: 100%;
+  max-width: 900px;
+  text-align: center;
+}
+
+.tryLabel {
+  font-family: "IBM Plex Sans", sans-serif;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: #3157d5;
+  margin-bottom: 2rem;
+}
+
+.tryContent h2 {
+  font-family: "Instrument Serif", serif;
+  font-size: clamp(3rem, 6vw, 5rem);
+  line-height: 1;
+  margin: 0;
+}
+
+.questionInput {
+  width: 100%;
+  margin-top: 3rem;
+  padding: 1.25rem;
+  border-radius: 16px;
+  border: none;
+  font-size: 1rem;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+.exploreButton {
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  border-radius: 999px;
+  border: none;
+  background: #3157d5;
+  color: white;
+  cursor: pointer;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+.followUpSection {
+  margin-top: 4rem;
+}
+
+.followUpCard {
+  text-align: left;
+  margin-top: 2rem;
+}
+
+.followUpCard p {
+  font-family: "Instrument Serif", serif;
+  font-size: 1.4rem;
+}
+
+.followUpCard textarea {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 12px;
+  border: none;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+.analysisSection {
+  margin-top: 4rem;
+}
+
+.analysisCard {
+  background: white;
+  border-radius: 18px;
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.analysisCard h3 {
+  font-family: "Instrument Serif", serif;
+  margin-bottom: 1rem;
+}
+
+.analysisCard p {
+  font-family: "IBM Plex Sans", sans-serif;
+  line-height: 1.7;
+}
+
+.tryError {
+  margin-top: 1rem;
+  color: #c62828;
+}
+
+.optionGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.optionButton {
+  padding: 1rem;
+  border-radius: 999px;
+  border: 1px solid #3157d5;
+  background: transparent;
+  color: #3157d5;
+  font-family: "IBM Plex Sans", sans-serif;
+  cursor: pointer;
+}
+
+.selectedOption {
+  background: #3157d5;
+  color: white;
+}
+.customAnswerInput {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 12px;
+  border: none;
+  font-family: "IBM Plex Sans", sans-serif;
+  resize: vertical;
+  min-height: 100px;
+}
+
+.decisionMapProgress {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.decisionMapProgress p {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+
+.decisionMapSteps {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.mapStep {
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  padding: 0.6rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  opacity: 0.55;
+}
+
+.mapStep.complete {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.mapStep.clear {
+  opacity: 1;
+  background: rgba(49, 87, 213, 0.15);
+  border-color: rgba(49, 87, 213, 0.45);
+  color: #3157d5;
+}
+
+.mapStep.learning {
+  opacity: 1;
+  background: rgba(242, 182, 50, 0.18);
+  border-color: rgba(242, 182, 50, 0.55);
+  color: #8a6500;
+}
+
+.mapStep.unclear {
+  opacity: 0.55;
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(19, 32, 63, 0.18);
+  color: #4d5a73;
+}
+
+.mapStep.clear {
+  opacity: 1;
+  background: rgba(49, 87, 213, 0.15);
+  border-color: rgba(49, 87, 213, 0.45);
+  color: #3157d5;
+}
+
+.mapStep.learning {
+  opacity: 1;
+  background: rgba(242, 182, 50, 0.18);
+  border-color: rgba(242, 182, 50, 0.55);
+  color: #8a6500;
+}
+
+.mapStep.unclear {
+  opacity: 0.55;
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(19, 32, 63, 0.18);
+  color: #4d5a73;
+}
+
+.perspectiveReport {
+  margin-top: 3rem;
+}
+
+.reportLabel {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #3157d5;
+  margin-bottom: 1.5rem;
+}
+
+.perspectiveReport > h3 {
+  font-family: "Instrument Serif", serif;
+  font-size: clamp(2.8rem, 5vw, 4.8rem);
+  line-height: 1;
+  font-weight: 400;
+  color: #13203f;
+  max-width: 820px;
+  margin: 0 auto 3rem;
+}
+
+.reportGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.reportCard,
+.leanCard,
+.whyCard,
+.reflectionCard {
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(19, 32, 63, 0.12);
+  border-radius: 2rem;
+  padding: 2rem;
+  text-align: left;
+  box-shadow: 0 1.5rem 4rem rgba(19, 32, 63, 0.08);
+}
+
+.reportCard span {
+  font-size: 1.8rem;
+}
+
+.reportCard h4,
+.leanCard h4,
+.reflectionCard h4 {
+  font-family: "Instrument Serif", serif;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.1;
+  color: #13203f;
+  margin: 1rem 0;
+}
+
+.reportCard p,
+.leanCard p,
+.whyCard li,
+.reflectionCard p {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: #4d5a73;
+}
+
+.leanCard,
+.whyCard,
+.reflectionCard {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.leanLabel {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #3157d5;
+  margin-bottom: 1rem;
+}
+
+.leanCard h4 {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.whyCard ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.whyCard li {
+  margin: 0.7rem 0;
+}
+
+.reflectionCard h4 {
+  max-width: 720px;
+  margin: 0 auto;
+  font-style: italic;
+  color: #3157d5;
+}
+
+@media (max-width: 760px) {
+  .reportGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.evidenceGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  margin-top: 40px;
+}
+
+.evidenceCard {
+  background: white;
+  border-radius: 24px;
+  padding: 32px;
+  text-align: left;
+}
+
+.evidenceCard h4 {
+  font-family: "Instrument Serif";
+  font-size: 2rem;
+  margin-bottom: 18px;
+}
+
+.evidenceCard p {
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+.updatedEvidenceCard {
+  grid-column: span 2;
+  background: white;
+  border-radius: 24px;
+  padding: 40px;
+  text-align: center;
+}
+
+.updatedEvidenceCard h4 {
+  font-family: "Instrument Serif";
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.sourceLink {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 0.8rem;
+  color: #3157d8;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(49, 87, 216, 0.35);
+}
+
+.sourceLink:hover {
+  color: #1f3fb0;
+  border-bottom-color: #1f3fb0;
+}
+
+.sourcesConsulted {
+  margin-top: 32px;
+  background: white;
+  border-radius: 24px;
+  padding: 28px;
+  text-align: left;
+}
+
+.sourcesConsulted h4 {
+  font-family: "Instrument Serif";
+  font-size: 1.8rem;
+  margin-bottom: 18px;
+}
+
+.sourcePills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.sourcePills a {
+  font-size: 0.85rem;
+  color: #3157d8;
+  text-decoration: none;
+  border: 1px solid rgba(49, 87, 216, 0.25);
+  border-radius: 999px;
+  padding: 8px 14px;
+  background: rgba(49, 87, 216, 0.05);
+}
+
+.sourcePills a:hover {
+  background: rgba(49, 87, 216, 0.12);
+}
+
+.otherPerspectivesButton {
+  margin-top: 1.2rem;
+  padding: 0.85rem 1.4rem;
+  border: 1px solid #4169e1;
+  border-radius: 999px;
+  background: transparent;
+  color: #4169e1;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.otherPerspectivesButton:hover {
+  background: #4169e1;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.sourceItem p,
+.evidenceCard li,
+.updatedEvidenceCard p {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #26324a;
+}
+
+.sourceItem a {
+  display: inline-block;
+  margin-top: 0.4rem;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 0.78rem;
+  color: #4169e1;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(65, 105, 225, 0.35);
+}
+
+.sourceItem a:hover {
+  border-bottom-color: #4169e1;
+}
+
+.sourceTier {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #4169e1;
+}
