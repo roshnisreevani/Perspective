@@ -325,7 +325,7 @@ Return ONLY valid JSON with this exact structure:
 }
 `);
 
-    const result = extractJSON(text);
+const result = extractJSON(text);
     const cleanMapStatus = normalizeMapStatus(result.mapStatus);
     const forcedShouldContinue = shouldContinueInterview(turn, cleanMapStatus);
 
@@ -527,98 +527,47 @@ ${source.content.slice(0, 2200)}
   .join("\n")}
 
 Your job:
-1. Use credible sources to support the perspective.
-2. Use credible sources to challenge the perspective.
-3. Use Reddit, forums, or community sources only for community perspectives.
-4. Identify important factors the user did not discuss.
-5. Create an updated perspective.
+1. Check whether outside sources support the recommendation.
+2. Check whether outside sources make the recommendation weaker.
+3. Keep Reddit/forums only in communityInsights.
+4. Point out practical things the user should check before deciding.
+5. Write a short updated perspective.
+6. Use the kind of language someone would naturally say out loud in a conversation.
 
 Rules:
+- Use ONLY the provided sources.
+- Return ONLY valid JSON.
+- Use the exact source title and exact URL from the provided source list.
+- Do not invent sources, links, or statistics.
+- Use simple language a normal person would understand.
+- No academic wording.
+- No vague filler.
 
-* Use ONLY the provided research sources.
+Source rules:
+- supports must use only tier1 or tier2 sources.
+- challenges must use only tier1 or tier2 sources.
+- communityInsights must use only community sources.
+- Never use Reddit/forums in supports or challenges.
 
-* Use plain language.
+Amount:
+- Return exactly 2 support items when possible.
+- Return exactly 2 challenge items when possible.
+- Return exactly 1 or 2 community insight items when possible.
+- Each item should be 2 short sentences.
 
-* Do not sound academic.
+Writing style:
+- Sentence 1: what the source says.
+- Sentence 2: why that matters for this decision.
+- Write like you are explaining it to a friend.
+- Avoid words like: implications, facilitate, optimize, utilize, stakeholders, limitations, interdisciplinary, computational complexity.
+- Avoid phrases like: "it depends", "there are pros and cons", "further research is needed", "this may be beneficial".
 
-* Write like you are helping someone think through a real decision.
-
-* You must copy the exact URL from one of the provided sources.
-
-* You must copy the exact source title from one of the provided sources.
-
-* Do not use generic source names like "Google Scholar", "BLS", or "Reddit search" unless that is the exact provided title.
-
-* Do not invent sources.
-
-* Do not invent statistics.
-
-* supports must use only tier1 or tier2 sources.
-
-* Never use Reddit, forums, comments, or community sources in supports.
-
-* challenges must use only tier1 or tier2 sources.
-
-* Never use Reddit, forums, comments, or community sources in challenges.
-
-* communityInsights must use only community sources.
-
-* Community sources include Reddit, forums, discussion boards, and experience-sharing communities.
-
-* Return exactly 2 support items whenever possible.
-
-* Return exactly 2 challenge items whenever possible.
-
-* Return exactly 2 community insight items whenever possible.
-
-* Each item should be 2 short sentences.
-
-* First sentence: explain the finding.
-
-* Second sentence: explain why it matters for this decision.
-
-* Keep the language easy to understand.
-
-* Avoid phrases such as:
-  "it depends"
-  "there are pros and cons"
-  "further research is needed"
-  "this may be beneficial"
-
-* Supports should answer:
-  "What evidence points in this direction?"
-
-* Challenges should answer:
-  "What evidence suggests caution?"
-
-* Community insights should answer:
-  "What are real people experiencing or noticing?"
-
-* Missing factors should identify important things the user has not considered yet.
-
-* Do not repeat the same idea across multiple cards.
-
-* Do not simply repeat what the user already said.
-
-* Use the sources to add new information.
-
-* Every support item must cite a source.
-
-* Every challenge item must cite a source.
-
-* Every community insight item must cite a source.
-
-* Research evidence and community perspectives must remain separate.
-
-* Community perspectives are context, not proof.
-
-* Updated perspective must be 2-3 sentences.
-
-* Explain whether the research strengthened, weakened, or refined the original recommendation.
-
-* Do not mention internal profile categories.
-
-* Return ONLY valid JSON.
+Section meaning:
+- supports: article/research points that make the recommendation stronger.
+- challenges: article/research points that make the user pause or double-check.
+- communityInsights: what real people say from Reddit/forums only.
+- missingFactors: practical things the user should check before deciding.
+- updatedPerspective: 2 sentences max. Say whether the outside sources strengthened, weakened, or slightly changed the recommendation.
 
 
 Return this exact JSON structure:
@@ -656,7 +605,26 @@ Return this exact JSON structure:
 }
 `);
 
-    const result = extractJSON(text);
+    let result;
+
+try {
+  result = extractJSON(text);
+} catch (error) {
+  console.log("RAW EVIDENCE RESPONSE:", text);
+
+  result = {
+    supports: [],
+    challenges: [],
+    communityInsights: [],
+    missingFactors: [
+      "The outside sources were not clear enough to fully settle the decision.",
+      "The exact requirements or real-world constraints should still be checked.",
+      "Community opinions may vary depending on personal goals.",
+    ],
+    updatedPerspective:
+      "The original recommendation still seems reasonable, but the research step could not produce a clean source-backed update this time.",
+  };
+}
 
     const supports = Array.isArray(result.supports)
       ? result.supports
@@ -679,12 +647,7 @@ Return this exact JSON structure:
           .slice(0, 2)
       : [];
 
-    const fallbackChallengeSource =
-      sources.find((source) => source.tier !== "community") || sources[0];
-
-    const fallbackCommunitySource = sources.find(
-      (source) => source.tier === "community"
-    );
+    
     const researchSourcesOnly = sources.filter(
   (source) => source.tier !== "community"
 );
@@ -784,7 +747,26 @@ Return ONLY valid JSON with this exact structure:
 }
 `);
 
-    const result = extractJSON(text);
+    let result;
+
+try {
+  result = extractJSON(text);
+} catch (error) {
+  console.log("RAW EVIDENCE RESPONSE:", text);
+
+  result = {
+    supports: [],
+    challenges: [],
+    communityInsights: [],
+    missingFactors: [
+      "The sources were not clear enough to fully settle the decision.",
+      "Check the real requirements, costs, or constraints before deciding.",
+      "Community opinions may differ depending on the person's goals.",
+    ],
+    updatedPerspective:
+      "The original recommendation still seems reasonable, but the research summary did not come through cleanly this time.",
+  };
+}
     res.json(result);
   } catch (error) {
     console.error("Question generation failed:");
