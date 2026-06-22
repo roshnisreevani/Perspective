@@ -1,73 +1,59 @@
-# React + TypeScript + Vite
+# 🧭 PERSPECTIVE 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Perspective is a project I built out of a question I've been thinking about for a long time:
 
-Currently, two official plugins are available:
+**Why can two people look at the same situation and come away with completely different conclusions?**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+As I became more interested in artificial intelligence, I found myself less interested in whether a system could produce an answer and more interested in how it arrived there. The reasoning, assumptions, experiences, and values behind a decision often matter just as much as the decision itself.
 
-## React Compiler
+Perspective is my attempt to explore that idea.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Through a guided conversation, the system helps users understand their priorities, concerns, assumptions, and tradeoffs. It then generates a personalized perspective report and gathers outside evidence and alternative viewpoints to help users think more deeply about their decision.
 
-## Expanding the ESLint configuration
+## ⚙️ What It Does
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+* Conducts an AI-guided interview
+* Adapts questions based on previous responses
+* Identifies priorities, concerns, assumptions, and tradeoffs
+* Generates a personalized perspective report
+* Finds supporting and challenging evidence
+* Surfaces alternative viewpoints and community perspectives
+* Encourages reflection rather than providing a single answer
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🤔 Example Questions
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+* Should I minor in Mathematics or Psychology?
+* Should I study abroad next year?
+* Should I move to a new city after graduation?
+* Should I pursue graduate school or enter the workforce?
+* Should I switch career paths?
+* Should I take a stable opportunity or a riskier one?
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🤷‍♀️ Why I Built It
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+One of the things that fascinates me most about AI is its relationship with human decision-making.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+We often assume that better decisions come from having more information, but I've found that people can have access to the same information and still reach completely different conclusions. Usually, what's different isn't the information itself but it's the assumptions, priorities, experiences, and values behind it.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Perspective was built to make those invisible factors more visible.
+
+## 🛠️ Tech Stack
+
+* React
+* TypeScript
+* CSS
+* Node.js
+* Express
+* Ollama
+* Tavily
+
+## 🎯 Current Focus
+
+I'm currently exploring how AI can help people better understand their own reasoning, evaluate evidence, and consider perspectives they may not have thought about otherwise.
+
+## 🌱 Philosophy
+
+Two people can look at the same question and reach completely different conclusions.
+
+Rather than deciding who is right, this project aims to uncover the assumptions, priorities, and experiences that led them there.
+
